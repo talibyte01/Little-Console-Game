@@ -120,9 +120,10 @@ int main()
 		//                                                                            'P'    'W'
 		if (((GetKeyState(VK_SPACE) & 0x80) != 0) && ItemCollected)
 		{
-			if (g_Level[g_PlayerPosition.m_Y * g_LevelSizeX + (g_PlayerPosition.m_X + 1)] == 'W')
+			if (g_Level[g_PlayerPosition.m_Y * g_LevelSizeX + (g_PlayerPosition.m_X + 1)] == 'W'  && g_PlayerPosition.m_Y * g_LevelSizeX + (g_PlayerPosition.m_X + 1) != 15 && g_PlayerPosition.m_Y * g_LevelSizeX + (g_PlayerPosition.m_X + 1) != 23)
 			{
 				g_Level[g_PlayerPosition.m_Y * g_LevelSizeX + (g_PlayerPosition.m_X + 1)] = ' ';
+				ItemCollected = false;
 			}
 		}
 
